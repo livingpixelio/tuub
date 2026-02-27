@@ -9,8 +9,8 @@ import Corestore from "corestore";
 // @ts-ignore
 import debounce from "debounceify";
 import b4a from "b4a";
-import express, { Request, Response } from "express";
-import { HttpError } from "./HttpError.js";
+import express, { type Request, type Response } from "express";
+import { HttpError } from "./HttpError.ts";
 
 interface ServerArgs {
   srcDir: string;

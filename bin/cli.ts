@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-import { serve, browse } from "../src/index.js";
+import { serve, browse } from "../src/index.ts";
 
 const args = process.argv.slice(2);
 const command = args[0];
 
 if (!command) {
-  console.error("Usage: tuub-reader <command> [options]");
+  console.error("Usage: tuub <command> [options]");
   console.error("Commands:");
   console.error("  serve <srcDir> [--cache-dir <dir>]");
   console.error("  browse <shareKey> [--port <port>] [--cache-dir <dir>]");
@@ -17,7 +17,7 @@ async function main() {
     const srcDir = args[1];
     if (!srcDir) {
       console.error("Error: serve requires srcDir argument");
-      console.error("Usage: tuub-reader serve <srcDir> [--cache-dir <dir>]");
+      console.error("Usage: tuub serve <srcDir> [--cache-dir <dir>]");
       process.exit(1);
     }
 
@@ -28,7 +28,7 @@ async function main() {
     if (!shareKey) {
       console.error("Error: browse requires shareKey argument");
       console.error(
-        "Usage: tuub-reader browse <shareKey> [--port <port>] [--cache-dir <dir>]",
+        "Usage: tuub browse <shareKey> [--port <port>] [--cache-dir <dir>]",
       );
       process.exit(1);
     }
